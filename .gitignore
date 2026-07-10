@@ -44,3 +44,20 @@ Thumbs.db
 ### Environment Files ###
 .env
 .env.*
+
+# Environment
+.env
+.env.*
+
+# Maven
+dependency-reduced-pom.xml
+
+# Eclipse
+bin/
+
+# VS Code
+.history/
+
+# macOS
+.AppleDouble
+.LSOverride

@@ -1,36 +1,62 @@
 const palette = {
-  indigo: { tint: 'rgba(229,62,62,0.07)', bg: 'rgba(229,62,62,0.12)', color: '#c53030', bar: '#e53e3e' },
-  red: { tint: 'rgba(229,62,62,0.07)', bg: 'rgba(229,62,62,0.12)', color: '#c53030', bar: '#e53e3e' },
-  violet: { tint: 'rgba(249,115,22,0.07)', bg: 'rgba(249,115,22,0.12)', color: '#c2410c', bar: '#f97316' },
-  orange: { tint: 'rgba(249,115,22,0.07)', bg: 'rgba(249,115,22,0.12)', color: '#c2410c', bar: '#f97316' },
-  emerald: { tint: 'rgba(37,99,235,0.07)', bg: 'rgba(37,99,235,0.12)', color: '#1d4ed8', bar: '#2563eb' },
-  blue: { tint: 'rgba(37,99,235,0.07)', bg: 'rgba(37,99,235,0.12)', color: '#1d4ed8', bar: '#2563eb' },
-  amber: { tint: 'rgba(245,158,11,0.07)', bg: 'rgba(245,158,11,0.12)', color: '#b45309', bar: '#f59e0b' },
-  yellow: { tint: 'rgba(245,158,11,0.07)', bg: 'rgba(245,158,11,0.12)', color: '#b45309', bar: '#f59e0b' },
-  pink: { tint: 'rgba(17,17,17,0.05)', bg: 'rgba(17,17,17,0.08)', color: '#111111', bar: '#111111' },
-  black: { tint: 'rgba(17,17,17,0.05)', bg: 'rgba(17,17,17,0.08)', color: '#111111', bar: '#111111' },
+  indigo: {
+    tint: "#ffffff",
+    bg: "#fee2e2",
+    color: "#dc2626",
+  },
+  violet: {
+    tint: "#ffffff",
+    bg: "#ffedd5",
+    color: "#ea580c",
+  },
+  emerald: {
+    tint: "#ffffff",
+    bg: "#dbeafe",
+    color: "#2563eb",
+  },
+  amber: {
+    tint: "#ffffff",
+    bg: "#fef3c7",
+    color: "#d97706",
+  },
 };
 
-export default function StatCard({ title, value, icon: Icon, color, subtitle }) {
+export default function StatCard({
+  title,
+  value,
+  icon: Icon,
+  color,
+  subtitle,
+}) {
   const style = palette[color] || palette.indigo;
 
   return (
-    <div className="glass-card-hover p-6" style={{ backgroundColor: style.tint }}>
-      <div className="flex items-start justify-between">
+    <div
+      className="rounded-2xl border bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+      style={{
+        borderColor: "#f1f5f9",
+      }}
+    >
+      <div className="flex justify-between items-start">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: 'rgba(17,17,17,0.45)' }}>
+          <p
+            className="text-xs uppercase font-semibold tracking-wider"
+            style={{ color: "#64748b" }}
+          >
             {title}
           </p>
-          <p className="text-3xl font-bold mt-2" style={{ color: '#111111' }}>
-            {typeof value === 'number' ? value.toLocaleString() : value}
-          </p>
-          {subtitle && <p className="text-xs mt-1" style={{ color: 'rgba(17,17,17,0.4)' }}>{subtitle}</p>}
-        </div>
-        <div className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: style.bg, color: style.color }}>
-          <Icon size={22} />
+
+          <h2 className="mt-3 text-4xl font-bold" style={{ color: "#111827" }}>
+            {typeof value === "number" ? value.toLocaleString() : value}
+          </h2>
+
+          {subtitle && (
+            <p className="mt-2 text-sm" style={{ color: "#94a3b8" }}>
+              {subtitle}
+            </p>
+          )}
         </div>
       </div>
-      <div className="mt-4 h-1 rounded-full opacity-60" style={{ background: `linear-gradient(to right, ${style.bar}, ${style.bar}99)` }} />
     </div>
   );
 }
