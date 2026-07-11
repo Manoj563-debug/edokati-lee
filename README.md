@@ -206,6 +206,28 @@ Employee-Management-System
 
 ---
 
+### Project Management
+
+![Projects](docs/images/projects.png)
+
+---
+
+### Add Project
+
+![Add Project](docs/images/add-project.png)
+
+---
+
+### Performance Review Management
+
+![Performance Reviews](docs/images/reviews.png)
+
+---
+
+### Add Performance Review
+
+![Add Review](docs/images/add-review.png)
+
 ## Installation Guide
 
 ### Prerequisites
