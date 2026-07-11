@@ -449,6 +449,8 @@ Java Full Stack Developer (Fresher)
 GitHub:
 https://github.com/niranjanhr27
 
+LinkedIn: www.linkedin.com/in/niranjanhr27
+
 ## Acknowledgement
 
 This project was developed as part of my Java Full Stack internship training. It provided hands-on experience in building a full-stack web application using Spring Boot, React.js, MySQL, and RESTful APIs.
