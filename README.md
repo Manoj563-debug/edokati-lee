@@ -230,27 +230,37 @@ Employee-Management-System
 
 ## Installation Guide
 
+Follow the steps below to run the project on your local machine.
+
 ### Prerequisites
 
-Before running the project, ensure you have the following installed:
+Make sure the following software is installed before running the application:
 
-- Java 21
+- Java 21 (JDK)
 - Node.js (LTS Version)
-- MySQL Server
-- Maven
+- MySQL Server 8.x
+- Apache Maven
 - Git
+- Eclipse IDE or IntelliJ IDEA (Backend)
+- Visual Studio Code (Frontend)
 
 ---
 
-### Clone the Repository
+## Clone the Repository
 
 ```bash
 git clone https://github.com/niranjanhr27/Employee-Management-System.git
 ```
 
+Move into the project directory.
+
+```bash
+cd Employee-Management-System
+```
+
 ---
 
-### Backend Setup
+## Backend Setup
 
 Navigate to the backend project.
 
@@ -258,19 +268,41 @@ Navigate to the backend project.
 cd employee-management-system-backend
 ```
 
-Configure your MySQL database in:
+### Step 1: Create MySQL Database
+
+Open MySQL Workbench and execute:
+
+```sql
+CREATE DATABASE employee_db;
+```
+
+---
+
+### Step 2: Configure Database
+
+Open:
 
 ```
 src/main/resources/application.properties
 ```
 
-Run the Spring Boot application.
+Update your MySQL configuration:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/employee_db
+spring.datasource.username=YOUR_USERNAME
+spring.datasource.password=YOUR_PASSWORD
+```
+
+---
+
+### Step 3: Run the Backend
 
 ```bash
 mvn spring-boot:run
 ```
 
-The backend will start on:
+The backend server starts at:
 
 ```
 http://localhost:8080
@@ -278,7 +310,9 @@ http://localhost:8080
 
 ---
 
-### Frontend Setup
+## Frontend Setup
+
+Open another terminal.
 
 Navigate to the frontend project.
 
@@ -292,19 +326,35 @@ Install dependencies.
 npm install
 ```
 
-Start the development server.
+Start the React application.
 
 ```bash
 npm run dev
 ```
 
-The frontend will be available at:
+The frontend will start at:
 
 ```
 http://localhost:5173
 ```
 
 ---
+
+## Verify the Application
+
+Backend API
+
+```
+http://localhost:8080/employees
+```
+
+Frontend
+
+```
+http://localhost:5173
+```
+
+If both URLs open successfully, the project has been configured correctly.
 
 ## REST API Overview
 
@@ -381,13 +431,26 @@ The backend exposes RESTful APIs for managing employees, departments, projects, 
 
 **Niranjan H R**
 
-Aspiring Java Full Stack Developer
+Java Full Stack Developer (Fresher)
+
+### Technical Skills
+
+- Java
+- Spring Boot
+- Spring Data JPA
+- Hibernate ORM
+- React.js
+- JavaScript
+- Bootstrap 5
+- MySQL
+- REST APIs
+- Git & GitHub
 
 GitHub:
 https://github.com/niranjanhr27
 
----
-
 ## Acknowledgement
 
-This project was developed as part of a Java Full Stack learning journey to strengthen practical knowledge of Spring Boot, React.js, MySQL, REST APIs, and enterprise application development. It demonstrates full-stack development concepts including CRUD operations, layered architecture, responsive UI design, and database integration.
+This project was developed as part of my Java Full Stack internship training. It provided hands-on experience in building a full-stack web application using Spring Boot, React.js, MySQL, and RESTful APIs.
+
+While the project was assigned during training, I worked on understanding the architecture, implementing features, integrating the frontend and backend, debugging issues, testing the application, improving the project documentation, and organizing the GitHub repository to follow professional development practices.
